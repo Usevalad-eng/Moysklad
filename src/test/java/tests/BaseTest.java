@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,6 +16,8 @@ public class BaseTest {
     protected WebDriverWait wait;
     protected AuthPage authPage;
     protected HomePage homePage;
+
+    //protected Alert alert;
    // protected CartPage cartPage;
     //protected CheckoutStepOnePage checkoutStepOnePage;
     //protected CheckoutStepTwoPage checkoutStepTwoPage;

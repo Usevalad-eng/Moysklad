@@ -12,7 +12,7 @@ public class AuthTest extends BaseTest {
     public String passFieldIsEmptyMessage = "Epic sadface: Password is required";
 
     @Test
-    public void userShouldBeAuthorisedUsingValidData() {   //it works 14 oct 2024 13.26
+    public void userShouldBeAuthorisedUsingValidData() {   //new 14 oct 2024 13.26
         authPage.open();
         authPage.isPageOpened(SUBMIT_BUTTON);
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");

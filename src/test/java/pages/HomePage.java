@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BasePage {
     public static final By FIRST_STEPS_TEXT_LABEL = By.xpath("//h1[text()='Первые шаги в МоемСкладе']");
+    public static final By POPUP_PANEL = By.xpath("//div[@class = 'lognex-popup-panel']");
+    public static final By POPUP_PANEL_CLOSE_BUTTON = By.xpath("//div[@class = 'lognex-popup-panel']//button");
     public String itemLocator = "//div[text()='%s']/ancestor::div[@class = 'inventory_item_description']//button[text() = 'Add to cart']";
     public static final By ITEM_ONE_ADD_TO_CART_BUTTON = By.id("add-to-cart-sauce-labs-backpack");
     public static final By BASKET_BUTTON = By.xpath("//a[@data-test='shopping-cart-link']");
@@ -64,4 +66,10 @@ public class HomePage extends BasePage {
     public void clickRemoveFirstItem() {
         driver.findElements(REMOVE_BUTTON).get(0).click();
     }
+
+    public boolean isPopupDisplayed(By element){
+        return driver.findElement(element).isDisplayed();
+    }
+
+
 }
