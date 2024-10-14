@@ -9,15 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class BasePage {
+public abstract class BasePage {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
-    public static final String URL = "https://www.saucedemo.com/";
+    public static final String URL = "https://online.moysklad.ru/";
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        //wait = new WebDriverWait(driver, Duration.ofSeconds(4));
     }
 
     public void setWait(){
@@ -27,15 +27,15 @@ public class BasePage {
             }
         };
     }
-    protected boolean isPageExist(By element) {
+    /*protected boolean isPageExist(By element) {
         return driver.findElement(element).isDisplayed();
-    }
+    }*/
 
-    protected boolean isPageOpened(By element) {
-        return isPageExist(element);
-    }
+    protected abstract boolean isPageOpened(By element);
+        //return isPageExist(element);
 
-    protected boolean isPageExistV2(By element) {
+
+    protected boolean isPageExist(By element) {
         try {
             return driver.findElement(element).isDisplayed();
         }catch (NoSuchElementException exception){

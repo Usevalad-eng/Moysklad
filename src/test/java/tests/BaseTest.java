@@ -14,7 +14,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected AuthPage authPage;
-    //protected InventoryPage inventoryPage;
+    protected HomePage homePage;
    // protected CartPage cartPage;
     //protected CheckoutStepOnePage checkoutStepOnePage;
     //protected CheckoutStepTwoPage checkoutStepTwoPage;
@@ -28,7 +28,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
         wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         authPage = new AuthPage(driver);
-        //inventoryPage = new InventoryPage(driver);
+        homePage = new HomePage(driver);
         //cartPage = new CartPage(driver);
         //checkoutStepOnePage = new CheckoutStepOnePage(driver);
         //checkoutStepTwoPage = new CheckoutStepTwoPage(driver);

@@ -2,27 +2,28 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AuthPage;
 
 import static org.testng.Assert.assertEquals;
+import static pages.AuthPage.*;
+import static pages.HomePage.*;
 
 public class AuthTest extends BaseTest {
 
     public String passFieldIsEmptyMessage = "Epic sadface: Password is required";
 
     @Test
-    public void userShouldBeAuthorisedUsingValidData() {
+    public void userShouldBeAuthorisedUsingValidData() {   //it works 14 oct 2024 13.26
         authPage.open();
-        authPage.isPageOpened();
-        authPage.inputLoginAndPassword("standard_user", "secret_sauce");
+        authPage.isPageOpened(SUBMIT_BUTTON);
+        authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
-        //inventoryPage.inventoryPageIsOpen();
+        homePage.isPageOpened(FIRST_STEPS_TEXT_LABEL);
     }
 
     @Test
     public void problemUserShouldBeAuthorisedUsingValidData() {
         authPage.open();
-        authPage.isPageOpened();
+        authPage.isPageOpened(SUBMIT_BUTTON);
         authPage.inputLoginAndPassword("problem_user", "secret_sauce");
         authPage.clickLoginButton();
        // inventoryPage.inventoryPageIsOpen();
@@ -31,7 +32,7 @@ public class AuthTest extends BaseTest {
     @Test
     public void performanceUserShouldBeAuthorisedUsingValidData() {
         authPage.open();
-        authPage.isPageOpened();
+        authPage.isPageOpened(SUBMIT_BUTTON);
         authPage.inputLoginAndPassword("performance_glitch_user", "secret_sauce");
         authPage.clickLoginButton();
         //inventoryPage.inventoryPageIsOpen();
@@ -40,7 +41,7 @@ public class AuthTest extends BaseTest {
     @Test
     public void errorUserShouldBeAuthorisedUsingValidData() {
         authPage.open();
-        authPage.isPageOpened();
+        authPage.isPageOpened(SUBMIT_BUTTON);
         authPage.inputLoginAndPassword("error_user", "secret_sauce");
         authPage.clickLoginButton();
         //inventoryPage.inventoryPageIsOpen();
@@ -49,7 +50,7 @@ public class AuthTest extends BaseTest {
     @Test
     public void visualUserShouldBeAuthorisedUsingValidData() {
         authPage.open();
-        authPage.isPageOpened();
+        authPage.isPageOpened(SUBMIT_BUTTON);
         authPage.inputLoginAndPassword("visual_user", "secret_sauce");
         authPage.clickLoginButton();
         //inventoryPage.inventoryPageIsOpen();

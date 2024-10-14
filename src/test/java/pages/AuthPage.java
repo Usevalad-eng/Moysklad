@@ -6,9 +6,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class AuthPage extends BasePage {
 
-    public static final By USERNAME = By.id("user-name");
-    public static final By PASSWORD = By.id("password");
-    public static final By LOGIN_BUTTON = By.id("login-button");
+    public static final By USERNAME = By.xpath("//input[@name = 'j_username']");
+    public static final By PASSWORD = By.xpath("//input[@name = 'j_password']");
+    public static final By SUBMIT_BUTTON = By.id("submitButton");
     public static final By ERROR_MESSAGE = By.xpath("//h3[@data-test='error']");
 
     public static final By CLOSE_ERROR_MESSAGE = By.xpath("//button[@class='error-button']");
@@ -24,7 +24,7 @@ public class AuthPage extends BasePage {
     }
 
     public void clickLoginButton() {
-        driver.findElement(LOGIN_BUTTON).click();
+        driver.findElement(SUBMIT_BUTTON).click();
     }
 
     public String getErrorMessage() {
@@ -35,15 +35,21 @@ public class AuthPage extends BasePage {
         driver.get(URL);
     }
 
-    public boolean isPageOpened() {
+
+    /*public boolean isPageOpened() {
         return isPageExist(LOGIN_BUTTON);
+    }*/
+
+    @Override
+    public boolean isPageOpened(By element) {
+        return isPageExist(element);
     }
 
     public void login() {
         driver.get(URL);
         driver.findElement(USERNAME).sendKeys("standard_user");
         driver.findElement(PASSWORD).sendKeys("secret_sauce");
-        driver.findElement(LOGIN_BUTTON).click();
+        driver.findElement(SUBMIT_BUTTON).click();
         //Assert.assertTrue(driver.findElement(PRODUCT_LABEL).isDisplayed());
     }
 
