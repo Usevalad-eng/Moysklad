@@ -8,7 +8,7 @@ import static pages.HomePage.*;
 
 public class AuthTest extends BaseTest {
 
-    public String passFieldIsEmptyMessage = "Чтобы войти, укажите имя пользователя";
+    public String loginAndPassFieldsAreEmptyMessage = "Чтобы войти, укажите имя пользователя";
 
     @Test
     public void userShouldBeAuthorisedUsingValidData() {
@@ -25,6 +25,6 @@ public class AuthTest extends BaseTest {
         authPage.inputLoginAndPassword("", "");
         authPage.clickLoginButton();
         String errorMessage = authPage.getErrorMessage();
-        assertEquals(errorMessage, passFieldIsEmptyMessage, "Password and username are required");
+        assertEquals(errorMessage, loginAndPassFieldsAreEmptyMessage, "Password and username are required");
     }
 }

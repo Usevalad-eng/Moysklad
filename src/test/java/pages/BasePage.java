@@ -5,12 +5,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
 
     protected WebDriver driver;
-    protected WebDriverWait wait;
+    //protected WebDriverWait wait;
     public static final String URL = "https://online.moysklad.ru/";
 
     public BasePage(WebDriver driver) {
