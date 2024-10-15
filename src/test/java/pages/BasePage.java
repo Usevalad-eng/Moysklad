@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 public abstract class BasePage {
 
     protected WebDriver driver;
-    //protected WebDriverWait wait;
     public static final String URL = "https://online.moysklad.ru/";
 
     public BasePage(WebDriver driver) {
