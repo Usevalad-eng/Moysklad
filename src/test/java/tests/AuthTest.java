@@ -13,10 +13,15 @@ public class AuthTest extends BaseTest {
     @Test
     public void userShouldBeAuthorisedUsingValidData() {
         authPage.open();
-        authPage.isPageOpened(SUBMIT_BUTTON);
+        //authPage.isPageOpened(SUBMIT_BUTTON);
+        //authPage.isAuthPageOpened();
+        authPage.isPageOpened();
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
-        homePage.isPageOpened(FIRST_STEPS_TEXT_LABEL);
+        //homePage.isPageOpened(FIRST_STEPS_TEXT_LABEL);
+        //homePage.isHomePageOpened();
+        homePage.isPageOpened();
+        homePage.exit();
     }
 
     @Test

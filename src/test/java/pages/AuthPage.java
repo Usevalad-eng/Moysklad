@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static pages.HomePage.FIRST_STEPS_TEXT_LABEL;
+
 public class AuthPage extends BasePage {
     public static final By USERNAME = By.xpath("//input[@name = 'j_username']");
     public static final By PASSWORD = By.xpath("//input[@name = 'j_password']");
@@ -31,7 +33,11 @@ public class AuthPage extends BasePage {
     }
 
     @Override
-    public boolean isPageOpened(By element) {
-        return isPageExist(element);
+    public boolean isPageOpened() {
+        return isPageExist(SUBMIT_BUTTON);
     }
+
+    /*public boolean isAuthPageOpened() {
+        return isPageExist(SUBMIT_BUTTON);
+    }*/
 }
