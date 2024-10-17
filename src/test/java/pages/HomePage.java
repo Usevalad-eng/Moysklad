@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BasePage {
     public static final By FIRST_STEPS_TEXT_LABEL = By.xpath("//h1[text()='Первые шаги в МоемСкладе']");
@@ -16,6 +17,8 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
     }
+
+
 
     @Override
     public boolean isPageOpened() {
@@ -40,5 +43,18 @@ public class HomePage extends BasePage {
         driver.findElement(USER_SETUP_ITEM).click();
         driver.findElement(SAVE_BUTTON).click();
         driver.findElement(CLOSE_BUTTON).click();
+    }
+
+    public void waitUntil__First_steps_text_label_isVisible(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(FIRST_STEPS_TEXT_LABEL));
+    }
+
+    public boolean waitUntil__PopupPanel_isInvisible(){
+       return wait.until(ExpectedConditions.invisibilityOfElementLocated(POPUP_PANEL));
+    }
+
+    @Override
+    public void open() {
+        driver.get(URL + "/app/#homepage");
     }
 }

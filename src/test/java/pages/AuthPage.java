@@ -25,7 +25,7 @@ public class AuthPage extends BasePage {
     public String getErrorMessage() {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
-
+    @Override
     public void open() {
         driver.get(URL);
     }
