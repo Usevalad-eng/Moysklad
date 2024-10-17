@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 public class HomePage extends BasePage {
     public static final By FIRST_STEPS_TEXT_LABEL = By.xpath("//h1[text()='Первые шаги в МоемСкладе']");
@@ -55,7 +56,8 @@ public class HomePage extends BasePage {
         driver.findElement(CLOSE_BUTTON).click();
     }
 
-    /*public boolean waitHomePage_logo(){
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(HOME_PAGE_IMG)).isDisplayed();
+    /*public void waitHomePage_logo(){
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(HOME_PAGE_IMG)).isDisplayed());
+        //return wait.until(ExpectedConditions.visibilityOfElementLocated(HOME_PAGE_IMG)).isDisplayed();
     }*/
 }

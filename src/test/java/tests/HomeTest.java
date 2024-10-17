@@ -47,6 +47,7 @@ public class HomeTest extends BaseTest {
         homePage.userSetup();
         //Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(HOME_PAGE_IMG)).isDisplayed());
         //Assert.assertTrue(homePage.waitHomePage_logo());
+        //homePage.waitHomePage_logo();
         homePage.exit();
         authPage.isPageOpened();
     }
