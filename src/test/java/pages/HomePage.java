@@ -17,9 +17,6 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
-
-
     @Override
     public boolean isPageOpened() {
         return isPageExist(FIRST_STEPS_TEXT_LABEL);
@@ -43,10 +40,6 @@ public class HomePage extends BasePage {
         driver.findElement(USER_SETUP_ITEM).click();
         driver.findElement(SAVE_BUTTON).click();
         driver.findElement(CLOSE_BUTTON).click();
-    }
-
-    public void waitUntil__First_steps_text_label_isVisible(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(FIRST_STEPS_TEXT_LABEL));
     }
 
     public boolean waitUntil__PopupPanel_isInvisible(){

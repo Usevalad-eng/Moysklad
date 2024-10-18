@@ -1,5 +1,6 @@
 package pages;
 
+import elements.Input;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -10,16 +11,16 @@ import java.time.Duration;
 public abstract class BasePage {
 
     protected WebDriver driver;
-    protected WebDriverWait wait;  //del
+    protected WebDriverWait wait;
+    protected Input input;
     public static final String URL = "https://online.moysklad.ru/";
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5)); //del
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     public abstract void open();
-
 
     protected abstract boolean isPageOpened();
 
