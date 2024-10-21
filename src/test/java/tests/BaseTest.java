@@ -6,10 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.AuthPage;
-import pages.GoodEditPage;
-import pages.GoodPage;
-import pages.HomePage;
+import pages.*;
 
 import java.time.Duration;
 
@@ -20,7 +17,8 @@ public class BaseTest {
     protected HomePage homePage;
     protected GoodPage goodPage;
     protected GoodEditPage goodEditPage;
-    //protected Input input;
+    protected TopMenuPage topMenuPage;
+    protected UserSettingsPage userSettingsPage;
 
     @BeforeMethod
     public void setUp() {
@@ -31,7 +29,8 @@ public class BaseTest {
         homePage = new HomePage(driver);
         goodPage = new GoodPage(driver);
         goodEditPage = new GoodEditPage(driver);
-        //input = new Input(driver, "Артикул");
+        topMenuPage = new TopMenuPage(driver);
+        userSettingsPage = new UserSettingsPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)

@@ -7,8 +7,9 @@ public class Input {
 
     protected WebDriver driver;
     protected String label;
-    public static final By ITEM_LOCATOR = By.xpath("//span[text() = '%s']/ancestor::tr[@class]//input");
+    public  String inputLocator = "//span[text() = '%s']/ancestor::tr[@class]//input";
     //xpath:               //span[text() = 'Артикул']/ancestor::tr[@class]//input
+    //   //span[text() = 'Имя']/ancestor::tr[@class]//input
 
     public Input(WebDriver driver, String label) {
         this.driver = driver;
@@ -16,10 +17,11 @@ public class Input {
     }
 
     public void write(String text){
-        driver.findElement(By.xpath(String.format(label,ITEM_LOCATOR))).sendKeys(text);
+        driver.findElement(By.xpath(String.format(inputLocator, this.label))).clear();
+        driver.findElement(By.xpath(String.format(inputLocator, this.label))).sendKeys(text);
     }
 
     public void clear(){
-        driver.findElement(By.xpath(String.format(label,ITEM_LOCATOR))).clear();
+        driver.findElement(By.xpath(String.format(inputLocator, this.label))).clear();
     }
 }

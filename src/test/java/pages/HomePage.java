@@ -14,6 +14,8 @@ public class HomePage extends BasePage {
     public static final By SAVE_BUTTON = By.xpath("//span[text() = 'Сохранить']");
     public static final By CLOSE_BUTTON = By.xpath("//span[text() = 'Закрыть']");
 
+    //   //span[text() = 'Имя']/ancestor::tr[@class]//input
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -42,7 +44,12 @@ public class HomePage extends BasePage {
         driver.findElement(CLOSE_BUTTON).click();
     }
 
-    public boolean waitUntil__PopupPanel_isInvisible(){
+    public void userSetupSaveAndClose() {
+        driver.findElement(SAVE_BUTTON).click();
+        driver.findElement(CLOSE_BUTTON).click();
+    }
+
+    public boolean waitUntilPopupPanelIsInvisible(){
        return wait.until(ExpectedConditions.invisibilityOfElementLocated(POPUP_PANEL));
     }
 

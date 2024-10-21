@@ -1,10 +1,7 @@
 package tests;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static pages.HomePage.*;
 
 public class HomeTest extends BaseTest {
 
@@ -18,7 +15,7 @@ public class HomeTest extends BaseTest {
         if (homePage.isPopupDisplayed()) {
             homePage.closePopupPanel();
         }
-        Assert.assertTrue(homePage.waitUntil__PopupPanel_isInvisible());
+        Assert.assertTrue(homePage.waitUntilPopupPanelIsInvisible());
         homePage.exit();
         authPage.isPageOpened();
     }
@@ -33,7 +30,7 @@ public class HomeTest extends BaseTest {
         if (homePage.isPopupDisplayed()) {
             homePage.closePopupPanel();
         }
-        Assert.assertTrue(homePage.waitUntil__PopupPanel_isInvisible());
+        Assert.assertTrue(homePage.waitUntilPopupPanelIsInvisible());
         homePage.userSetup();
         homePage.exit();
         authPage.isPageOpened();

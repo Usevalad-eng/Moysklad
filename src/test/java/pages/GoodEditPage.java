@@ -16,10 +16,11 @@ public class GoodEditPage extends BasePage{
     public static final By ITEM_NAME_INPUT = By.xpath("//div[text() = 'Наименование товара']");
 
     public void writeIntoInput(){
-        new Input(driver, "Наименование товара").write("Item1_Test");
-        new Input(driver, "Артикул").write("Article1_Test");
-        new Input(driver, "Внешний код").write("OutCode1_Test");
+        new Input(driver, "Наименование товара").write("Item1Test");
+        new Input(driver, "Артикул").write("11111");
+        new Input(driver, "Внешний код").write("1111114444");
         new Input(driver, "Код").clear();
+        new Input(driver, "Код").write("22222");
     }
 
     public void testGoodWithData() {
