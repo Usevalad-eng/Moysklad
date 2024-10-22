@@ -31,7 +31,6 @@ public class HomeTest extends BaseTest {
         }
         Assert.assertTrue(homePage.waitUntilPopupPanelIsInvisible());
         homePage.userSetup();
-
     }
 
     @Test

@@ -13,8 +13,4 @@ public class GoodTest extends BaseTest{
         goodPage.isPageOpened();
         goodPage.testGood();
     }
-
-
-
-
 }

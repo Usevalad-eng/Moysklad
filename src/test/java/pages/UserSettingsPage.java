@@ -1,7 +1,6 @@
 package pages;
 
 import elements.Buttons;
-import elements.DropDown;
 import elements.Input;
 import model.UserSettings;
 import model.UserSettingsWithLombok;
@@ -24,7 +23,6 @@ public class UserSettingsPage extends BasePage{
         new Input(driver, "Имя").write(name);
         new Input(driver, "Отчество").write(patronymic);
         new Input(driver, "Фамилия").write(lastname);
-
     }
 
     public void inputUserInfo_(UserSettings userSettings){
@@ -49,9 +47,8 @@ public class UserSettingsPage extends BasePage{
     }
 
     public void clickSaveButton_(){
-        new Buttons(driver, "Сохранить").click(); //todo
+        new Buttons(driver, "Сохранить").clickOn(); //todo
     }
-
 
     public boolean successNotificationIsVisible(){
         return driver.findElement(SUCCESS_NOTIFICATION).isDisplayed();
@@ -60,7 +57,6 @@ public class UserSettingsPage extends BasePage{
     public void clickCloseButton(){
         driver.findElement(CLOSE_BUTTON).click();
     }
-
 
     @Override
     public void open() {

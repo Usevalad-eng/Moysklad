@@ -16,6 +16,4 @@ public class UserSettingsBuilder {
                 //.customer("Розничный покупатель") todo
                 .build();
     }
-
-
 }

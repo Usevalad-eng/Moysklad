@@ -16,7 +16,7 @@ public class AuthTest extends BaseTest {
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
         homePage.isPageOpened();
-        Assert.assertTrue(homePage.isPageOpened(), "You did't entered the app!");
+        Assert.assertTrue(homePage.isPageOpened(), "You didn't enter the app!");
 
     }
 

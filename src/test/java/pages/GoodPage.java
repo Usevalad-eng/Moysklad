@@ -31,6 +31,4 @@ public class GoodPage extends BasePage{
         driver.findElement(SAVE_BUTTON).click();
         driver.findElement(CLOSE_BUTTON).click();
     }
-
-
 }

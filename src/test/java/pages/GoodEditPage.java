@@ -24,7 +24,6 @@ public class GoodEditPage extends BasePage{
     }
 
 
-
     @Override
     public void open() {
         driver.get(URL + "/app/#good/edit?new&type=Good");

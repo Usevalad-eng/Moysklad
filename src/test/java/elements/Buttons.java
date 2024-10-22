@@ -14,7 +14,7 @@ public class Buttons {
         this.label = label;
     }
 
-    public void click(){
+    public void clickOn(){
         driver.findElement(By.xpath(String.format(buttonLocator, label))).click();
     }
 }

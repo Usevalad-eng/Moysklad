@@ -14,16 +14,11 @@ public class SetupUserTest extends BaseTest{
     @Test
     public void userGetSetupUser() {
         authPage.open();
-
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
-
-
         topMenuPage.selectMenuBarOption("Настройки пользователя");
-
         UserSettingsWithLombok userSettingsWithLombok = UserSettingsBuilder.get();
         userSettingsPage.inputUserInfoWL(userSettingsWithLombok);
-
         userSettingsPage.clickSaveButton();
         Assert.assertTrue(userSettingsPage.successNotificationIsVisible(), "User not saved!");
         userSettingsPage.clickCloseButton();
@@ -32,16 +27,10 @@ public class SetupUserTest extends BaseTest{
     @Test
     public void userGetSetupUserBasic() {
         authPage.open();
-
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
-
-
-
         topMenuPage.selectMenuBarOption("Настройки пользователя");
         userSettingsPage.inputUserInfo("Name", "Patr.","LName");
-
-
         userSettingsPage.clickSaveButton();
         Assert.assertTrue(userSettingsPage.successNotificationIsVisible(), "User not saved!");
         userSettingsPage.clickCloseButton();
@@ -50,17 +39,10 @@ public class SetupUserTest extends BaseTest{
     @Test
     public void userGetSetupUserBasic_() {
         authPage.open();
-
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
-
-
-
         topMenuPage.selectMenuBarOption("Настройки пользователя");
-
         userSettingsPage.inputUserInfo_(userSettings);
-
-
         userSettingsPage.clickSaveButton();
         Assert.assertTrue(userSettingsPage.successNotificationIsVisible(), "User not saved!");
         userSettingsPage.clickCloseButton();
