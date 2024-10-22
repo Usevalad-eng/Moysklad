@@ -23,14 +23,7 @@ public class GoodEditPage extends BasePage{
         new Input(driver, "Код").write("22222");
     }
 
-    public void testGoodWithData() {
-        driver.findElement(GOOD_BUTTON).click();
-        //driver.findElements(GOOD_FIELD).get(0).sendKeys("Good test");
-        writeIntoInput();
-        //wait
-        driver.findElement(SAVE_BUTTON).click();
-        driver.findElement(CLOSE_BUTTON).click();
-    }
+
 
     @Override
     public void open() {

@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -15,7 +16,8 @@ public class AuthTest extends BaseTest {
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
         homePage.isPageOpened();
-        homePage.exit();
+        Assert.assertTrue(homePage.isPageOpened(), "You did't entered the app!");
+
     }
 
     @Test
@@ -24,6 +26,6 @@ public class AuthTest extends BaseTest {
         authPage.inputLoginAndPassword("", "");
         authPage.clickLoginButton();
         String errorMessage = authPage.getErrorMessage();
-        assertEquals(errorMessage, loginAndPassFieldsAreEmptyMessage, "Password and username are required");
+        assertEquals(errorMessage, loginAndPassFieldsAreEmptyMessage, "Password and username are required!");
     }
 }

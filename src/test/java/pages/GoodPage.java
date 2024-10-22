@@ -32,10 +32,5 @@ public class GoodPage extends BasePage{
         driver.findElement(CLOSE_BUTTON).click();
     }
 
-    /*public void testGoods(){    //todo
-        for (int i = 0; i<=3; i++){
-            testGood();
-            //wait
-        }
-    }*/
+
 }
