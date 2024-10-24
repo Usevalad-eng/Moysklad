@@ -12,7 +12,7 @@ public abstract class BasePage {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected Input input;
+    //protected Input input;
     public static final String URL = "https://online.moysklad.ru/";
 
     public BasePage(WebDriver driver) {

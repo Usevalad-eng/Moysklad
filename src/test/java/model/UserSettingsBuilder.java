@@ -11,9 +11,10 @@ public class UserSettingsBuilder {
                 .name(faker.name().firstName())
                 .patronymic(faker.name().firstName() + "ich")
                 .lastname(faker.name().lastName())
-                .phone(faker.phoneNumber().cellPhone())
+                .phone("+37529" + faker.phoneNumber().cellPhone())
                 .position("Position test")
-                //.customer("Розничный покупатель") todo
+                //.customer("Розничный покупатель")  //must work
+                //.customer(0)
                 .build();
     }
 }

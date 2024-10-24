@@ -1,6 +1,7 @@
 package pages;
 
 import elements.Buttons;
+import elements.DropDown;
 import elements.Input;
 import model.UserSettings;
 import model.UserSettingsWithLombok;
@@ -39,7 +40,9 @@ public class UserSettingsPage extends BasePage{
         new Input(driver, "Фамилия").write(userSettingsWithLombok.getLastname());
         new Input(driver, "Телефон").write(userSettingsWithLombok.getPhone());
         new Input(driver, "Должность").write(userSettingsWithLombok.getPosition());
-        //new DropDown(driver, "Покупатель").selectOption(userSettingsWithLombok.getCustomer());  todo
+        //new DropDown(driver, "Покупатель").selectOption(userSettingsWithLombok.getCustomer());  //must work
+        //new DropDown(driver, "Покупатель").selectOption(0);
+        //new DropDown(driver, "Покупатель").selectOption();
     }
 
     public void clickSaveButton(){

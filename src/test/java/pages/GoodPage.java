@@ -31,4 +31,14 @@ public class GoodPage extends BasePage{
         driver.findElement(SAVE_BUTTON).click();
         driver.findElement(CLOSE_BUTTON).click();
     }
+
+    public void testGoodOne() {
+        driver.findElement(GOOD_BUTTON).click();
+        driver.findElements(GOOD_FIELD).get(0).sendKeys("Good test");
+    }
+
+    public void testGoodTwo() {
+        driver.findElement(SAVE_BUTTON).click();
+        driver.findElement(CLOSE_BUTTON).click();
+    }
 }

@@ -14,5 +14,6 @@ public class UserSettingsWithLombok {
     protected String lastname;
     protected String phone;
     protected String position;
-    //protected String customer;  todo
+    //protected String customer; //must work
+    //protected int customer;
 }
