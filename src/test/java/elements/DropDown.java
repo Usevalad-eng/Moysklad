@@ -14,8 +14,7 @@ public class DropDown {
     //public WebDriverWait wait = new WebDriverWait(null, Duration.ofSeconds(5));
     protected String label;
     //public String dropDownLocator = "//span[text() = '%s']/ancestor::tr[@class]//input";
-    public String dropDownLocator = "//span[text() = 'Покупатель']/ancestor::tr[@class]//div[@class = 'load-button tutorial-selector-image']";
-
+    public String dropDownLocator = "//span[text() = '%s']/ancestor::tr[@class]//div[@class = 'load-button tutorial-selector-image']";
     public String optionLocator = "//div[text() = '%s']";
 
     public DropDown(WebDriver driver, String label) {
