@@ -13,7 +13,7 @@ public class UserSettingsBuilder {
                 .lastname(faker.name().lastName())
                 .phone("+37529" + faker.phoneNumber().cellPhone())
                 .position("Position test")
-                //.customer("Розничный покупатель")  //must work
+                .customer("Розничный покупатель")  //must work
                 //.customer(0)
                 .build();
     }

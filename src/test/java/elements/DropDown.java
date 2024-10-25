@@ -11,9 +11,10 @@ import java.time.Duration;
 
 public class DropDown {
     protected WebDriver driver;
-    public WebDriverWait wait = new WebDriverWait(null, Duration.ofSeconds(5));
+    //public WebDriverWait wait = new WebDriverWait(null, Duration.ofSeconds(5));
     protected String label;
-    public String dropDownLocator = "//span[text() = '%s']/ancestor::tr[@class]//input";
+    //public String dropDownLocator = "//span[text() = '%s']/ancestor::tr[@class]//input";
+    public String dropDownLocator = "//span[text() = 'Покупатель']/ancestor::tr[@class]//div[@class = 'load-button tutorial-selector-image']";
 
     public String optionLocator = "//div[text() = '%s']";
 
@@ -22,13 +23,13 @@ public class DropDown {
         this.label = label;
     }
 
-    public void setWait(){
+    /*public void setWait(){
         new ExpectedCondition<Boolean>(){
             public Boolean apply(WebDriver driver){
                 return ((JavascriptExecutor)driver).executeScript("return document.readyState").toString().equals("complete");
             }
         };
-    }
+    }*/
 
     public void selectOption(String option){    //must work
         //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format(optionLocator, option))));

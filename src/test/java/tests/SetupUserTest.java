@@ -9,12 +9,12 @@ import org.testng.annotations.Test;
 public class SetupUserTest extends BaseTest{
 
    UserSettings userSettings = new UserSettings("Name", "Patronymic", "LastName",
-           "+3750000000", "Position");
+           "+375330000000", "Position");
 
     @Test
     public void userGetSetupUser() {
         authPage.open();
-        authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
+        authPage.inputLoginAndPassword("admin@udafyo", "Q123456");  //todo  - to add new login to other tests and change test name
         authPage.clickLoginButton();
         topMenuPage.selectMenuBarOption("Настройки пользователя");
         UserSettingsWithLombok userSettingsWithLombok = UserSettingsBuilder.get();
