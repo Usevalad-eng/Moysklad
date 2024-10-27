@@ -14,7 +14,7 @@ public class SetupUserTest extends BaseTest{
     @Test
     public void userGetSetupUser() {
         authPage.open();
-        authPage.inputLoginAndPassword("admin@udafyo", "Q123456");  //todo  - to add new login to other tests and change test name
+        authPage.inputLoginAndPassword("admin@oycahox", "Q123456");  //todo  - to add new login to other tests and change test name login: admin@udafyo   pwd: Q123456
         authPage.clickLoginButton();
         topMenuPage.selectMenuBarOption("Настройки пользователя");
         UserSettingsWithLombok userSettingsWithLombok = UserSettingsBuilder.get();
