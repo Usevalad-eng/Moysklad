@@ -18,13 +18,13 @@ public class UserSettingsPage extends BasePage{
         super(driver);
     }
 
-    public void inputUserInfoWL(UserSettings userSettings){
+    public void inputUserInfo(UserSettings userSettings){
         new Input(driver, "Имя").write(userSettings.getName());
         new Input(driver, "Отчество").write(userSettings.getPatronymic());
         new Input(driver, "Фамилия").write(userSettings.getLastname());
         new Input(driver, "Телефон").write(userSettings.getPhone());
         new Input(driver, "Должность").write(userSettings.getPosition());
-        //new DropDown(driver, "Покупатель").selectOption(userSettings.getCustomer());
+        //new DropDown(driver, "Покупатель").selectOption(userSettings.getCustomer());  //todo
     }
 
     public void clickSaveButton(){

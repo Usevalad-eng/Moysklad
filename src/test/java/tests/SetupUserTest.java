@@ -4,17 +4,18 @@ import model.UserSettingsBuilder;
 import model.UserSettings;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import tests.base.BaseTest;
 
-public class SetupUserTest extends BaseTest{
+public class SetupUserTest extends BaseTest {
 
-    @Test
+    @Test(description = "Testing of filling user setup settings")
     public void successNotificationIsVisibleAfterSavingUserSetupMenu() {
         authPage.open();
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
         topMenuPage.selectMenuBarOption("Настройки пользователя");
-        UserSettings userSettingsWithLombok = UserSettingsBuilder.get();
-        userSettingsPage.inputUserInfoWL(userSettingsWithLombok);
+        UserSettings userSettings = UserSettingsBuilder.get();
+        userSettingsPage.inputUserInfo(userSettings);
         userSettingsPage.clickSaveButton();
         Assert.assertTrue(userSettingsPage.successNotificationIsVisible(), "User not saved!");
         userSettingsPage.clickCloseButton();

@@ -2,6 +2,8 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import tests.base.BaseTest;
+import tests.base.Retry;
 
 import static org.testng.Assert.assertEquals;
 
@@ -9,18 +11,18 @@ public class AuthTest extends BaseTest {
 
     public String loginAndPassFieldsAreEmptyMessage = "Чтобы войти, укажите имя пользователя";
 
-    @Test
+    @Test(description = "User should be authorised using valid data",
+          retryAnalyzer = Retry.class)
     public void userShouldBeAuthorisedUsingValidData() {
         authPage.open();
         authPage.isPageOpened();
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
         homePage.isPageOpened();
-        Assert.assertTrue(homePage.isPageOpened(), "You didn't enter the app!");
-
+        Assert.assertTrue(homePage.isPageOpened(), "Error, you didn't enter the app!");
     }
 
-    @Test
+    @Test(description = "User should not be authorised using valid data")
     public void userShouldNotBeAuthorisedWhenDataIsEmpty() {
         authPage.open();
         authPage.inputLoginAndPassword("", "");
