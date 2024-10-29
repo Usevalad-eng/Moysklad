@@ -9,7 +9,6 @@ public class Input {
     protected String label;
     public  String inputLocator = "//span[text() = '%s']/ancestor::tr[@class]//input";
 
-
     public Input(WebDriver driver, String label) {
         this.driver = driver;
         this.label = label;

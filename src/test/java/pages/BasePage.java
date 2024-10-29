@@ -1,6 +1,5 @@
 package pages;
 
-import elements.Input;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +11,6 @@ public abstract class BasePage {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
-    //protected Input input;
     public static final String URL = "https://online.moysklad.ru/";
 
     public BasePage(WebDriver driver) {

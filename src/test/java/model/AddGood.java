@@ -9,8 +9,6 @@ import lombok.Data;
 @Builder
 public class AddGood {
 
-    //private String description;
     private String article;
     private String code;
-
 }

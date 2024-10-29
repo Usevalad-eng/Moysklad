@@ -3,8 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static pages.HomePage.FIRST_STEPS_TEXT_LABEL;
-
 public class TopMenuPage extends BasePage{
 
     protected static final By MENU_USERNAME = By.xpath("//div[@class = 'menu-username-new']");

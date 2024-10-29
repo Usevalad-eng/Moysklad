@@ -7,7 +7,6 @@ public class AddGoodBuilder {
     public static AddGood get(){
         return AddGood
                 .builder()
-                //.description("Description")
                 .article("Article")
                 .code(faker.code().asin())
                 .build();

@@ -16,7 +16,6 @@ public class HomeTest extends BaseTest {
             homePage.closePopupPanel();
         }
         Assert.assertTrue(homePage.waitUntilPopupPanelIsInvisible());
-
     }
 
     @Test

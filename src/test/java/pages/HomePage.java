@@ -14,8 +14,6 @@ public class HomePage extends BasePage {
     public static final By SAVE_BUTTON = By.xpath("//span[text() = 'Сохранить']");
     public static final By CLOSE_BUTTON = By.xpath("//span[text() = 'Закрыть']");
 
-    //   //span[text() = 'Имя']/ancestor::tr[@class]//input
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
