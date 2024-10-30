@@ -15,6 +15,7 @@ public class GoodTest extends BaseTest {
         goodPage.open();
         goodPage.isPageOpened();
         goodPage.testGood();
+        //todo add assert
     }
 
     @Test(description = "User can create  good item and some not empty fields within it")
@@ -28,5 +29,6 @@ public class GoodTest extends BaseTest {
         AddGood addGood = AddGoodBuilder.get();
         goodEditPage.writeIntoInput(addGood);
         goodPage.testGoodStepTwo();
+        //todo add assert
     }
 }

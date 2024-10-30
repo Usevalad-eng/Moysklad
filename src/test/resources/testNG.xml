@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test suite" parallel="tests" thread-count="2">
+<suite name="Test suite" parallel="tests" thread-count="1">
     <test name="test one -  Auth tests">
         <parameter name="browser" value="chrome"></parameter>
         <parameter name="name" value="admin@oycahox"></parameter>
@@ -13,6 +13,20 @@
         <parameter name="name" value="admin@oycahox"></parameter>
         <classes>
             <class name="tests.GoodTest" />
+        </classes>
+    </test>
+    <test name="test three -  Home tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="name" value="admin@oycahox"></parameter>
+        <classes>
+            <class name="tests.HomeTest" />
+        </classes>
+    </test>
+    <test name="test four -  Setup user tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="name" value="admin@oycahox"></parameter>
+        <classes>
+            <class name="tests.SetupUserTest" />
         </classes>
     </test>
 </suite>

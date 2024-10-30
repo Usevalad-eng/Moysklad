@@ -11,8 +11,7 @@ public class AuthTest extends BaseTest {
 
     public String loginAndPassFieldsAreEmptyMessage = "Чтобы войти, укажите имя пользователя";
 
-    @Test(description = "User should be authorised using valid data",
-          retryAnalyzer = Retry.class)
+    @Test(description = "User should be authorised using valid data")
     public void userShouldBeAuthorisedUsingValidData() {
         authPage.open();
         authPage.isPageOpened();
@@ -28,6 +27,6 @@ public class AuthTest extends BaseTest {
         authPage.inputLoginAndPassword("", "");
         authPage.clickLoginButton();
         String errorMessage = authPage.getErrorMessage();
-        assertEquals(errorMessage, loginAndPassFieldsAreEmptyMessage, "Password and username are required!");
+        Assert.assertEquals(errorMessage, loginAndPassFieldsAreEmptyMessage, "Password and username are required!");
     }
 }
