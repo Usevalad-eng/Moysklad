@@ -13,9 +13,9 @@ public class HomeTest extends BaseTest {
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
         homePage.isPageOpened();
-        /*if (homePage.isPopupDisplayed()) {     //popup was removed manually
-            homePage.closePopupPanel();          //todo refactor this (can't find  popup element)
-        }*/
+        if (homePage.isPopupDisplayed()) {     //popup was removed manually
+            homePage.closePopupPanel();
+        }
         Assert.assertTrue(homePage.waitUntilPopupPanelIsInvisible());
     }
 

@@ -49,6 +49,7 @@ cmake-build-*/
 # IntelliJ
 out/
 .idea/
+.allure/
 com/out/
 com/.idea/
 com/*.iml
@@ -58,6 +59,7 @@ target/
 Moysklad/target/
 .idea/
 Moysklad/.idea/
+Moysklad/.allure/
 *.iml
 Moysklad/*.iml
 

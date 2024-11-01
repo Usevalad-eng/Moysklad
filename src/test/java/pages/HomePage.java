@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -23,7 +24,12 @@ public class HomePage extends BasePage {
     }
 
     public boolean isPopupDisplayed() {
-        return driver.findElement(POPUP_PANEL).isDisplayed();
+        try{
+            return driver.findElement(POPUP_PANEL).isDisplayed();
+        }catch (NoSuchElementException e){
+            System.out.println("No popup panel element found");
+        }
+        return false;
     }
 
     public void closePopupPanel() {
