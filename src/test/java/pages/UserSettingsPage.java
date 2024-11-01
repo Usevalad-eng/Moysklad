@@ -24,7 +24,7 @@ public class UserSettingsPage extends BasePage{
         new Input(driver, "Фамилия").write(userSettings.getLastname());
         new Input(driver, "Телефон").write(userSettings.getPhone());
         new Input(driver, "Должность").write(userSettings.getPosition());
-        new DropDown(driver, "Покупатель").selectOption(userSettings.getCustomer());  //todo
+        new DropDown(driver, "Покупатель").selectOption(userSettings.getCustomer());
     }
 
     public void clickSaveButton(){
@@ -32,7 +32,7 @@ public class UserSettingsPage extends BasePage{
     }
 
     public void clickSaveButton_(){
-        new Buttons(driver, "Сохранить").clickOn(); //todo
+        new Buttons(driver, "Сохранить").clickOn();
     }
 
     public boolean successNotificationIsVisible(){

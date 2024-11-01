@@ -18,6 +18,5 @@ public class SetupUserTest extends BaseTest {
         userSettingsPage.inputUserInfo(userSettings);
         userSettingsPage.clickSaveButton();
         Assert.assertTrue(userSettingsPage.successNotificationIsVisible(), "User not saved!");
-        //userSettingsPage.clickCloseButton();
     }
 }

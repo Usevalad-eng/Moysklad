@@ -6,14 +6,14 @@ import tests.base.BaseTest;
 
 public class HomeTest extends BaseTest {
 
-    @Test(description = "Testing of login and close popup")
+    @Test(description = "Testing of login and close popup if it is displayed")
     public void loginAndClosePopup() {
         authPage.open();
         authPage.isPageOpened();
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
         homePage.isPageOpened();
-        if (homePage.isPopupDisplayed()) {     //popup was removed manually
+        if (homePage.isPopupDisplayed()) {
             homePage.closePopupPanel();
         }
         Assert.assertTrue(homePage.waitUntilPopupPanelIsInvisible());
@@ -26,12 +26,8 @@ public class HomeTest extends BaseTest {
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
         homePage.isPageOpened();
-        /*if (homePage.isPopupDisplayed()) {
-            homePage.closePopupPanel();
-        }
-        Assert.assertTrue(homePage.waitUntilPopupPanelIsInvisible());*/
-        homePage.userSetup();
-        //todo add assert
+        homePage.userSetupAndClose();
+        Assert.assertTrue(homePage.isPageOpened(), "Error, something went wrong!");
     }
 
     @Test(description = "Testing the possibility to exit from the app")
@@ -41,13 +37,8 @@ public class HomeTest extends BaseTest {
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
         homePage.isPageOpened();
-        /*if (homePage.isPopupDisplayed()) {
-            homePage.closePopupPanel();
-        }
-        Assert.assertTrue(homePage.waitUntilPopupPanelIsInvisible());*/
         homePage.userSetup();
         homePage.exit();
-        authPage.isPageOpened();
-        //todo add assert
+        Assert.assertTrue(authPage.isPageOpened(), "error");
     }
 }

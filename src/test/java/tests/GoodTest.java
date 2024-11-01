@@ -2,6 +2,7 @@ package tests;
 
 import model.AddGood;
 import model.AddGoodBuilder;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
@@ -14,8 +15,9 @@ public class GoodTest extends BaseTest {
         authPage.clickLoginButton();
         goodPage.open();
         goodPage.isPageOpened();
-        goodPage.testGood();
-        //todo add assert
+        goodPage.testGoodStepOne();
+        goodPage.testGoodStepTwo();
+        Assert.assertTrue(goodPage.isGoodPageSaved(), "Error, good item not saved!");
     }
 
     @Test(description = "User can create  good item and some not empty fields within it")
@@ -29,6 +31,6 @@ public class GoodTest extends BaseTest {
         AddGood addGood = AddGoodBuilder.get();
         goodEditPage.writeIntoInput(addGood);
         goodPage.testGoodStepTwo();
-        //todo add assert
+        Assert.assertTrue(goodPage.isGoodPageSaved(), "Error, good item not saved!");
     }
 }

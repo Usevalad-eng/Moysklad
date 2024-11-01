@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class GoodPage extends BasePage{
 
@@ -10,6 +11,7 @@ public class GoodPage extends BasePage{
     public static final By GOOD_FIELD = By.xpath("//input[@class = 'gwt-TextBox field b-validation-field']");
     public static final By SAVE_BUTTON = By.xpath("//span[text() = 'Сохранить']");
     public static final By CLOSE_BUTTON = By.xpath("//span[text() = 'Закрыть']");
+    public static final By GOOD_CREATED = By.xpath("//div[text() = 'Товар создан']");
 
     public GoodPage(WebDriver driver) {
         super(driver);
@@ -23,6 +25,10 @@ public class GoodPage extends BasePage{
     @Override
     public boolean isPageOpened() {
         return isPageExist(GOODS_LABEL);
+    }
+
+    public boolean isGoodPageSaved(){
+        return driver.findElement(GOOD_CREATED).isDisplayed();
     }
 
     public void testGood() {
@@ -39,6 +45,5 @@ public class GoodPage extends BasePage{
 
     public void testGoodStepTwo() {
         driver.findElement(SAVE_BUTTON).click();
-        driver.findElement(CLOSE_BUTTON).click();
     }
 }

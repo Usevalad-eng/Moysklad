@@ -48,6 +48,12 @@ public class HomePage extends BasePage {
         driver.findElement(CLOSE_BUTTON).click();
     }
 
+    public void userSetupAndClose() {
+        driver.findElement(ARROW_IMG).click();
+        driver.findElement(USER_SETUP_ITEM).click();
+        driver.findElement(CLOSE_BUTTON).click();
+    }
+
     public void userSetupSaveAndClose() {
         driver.findElement(SAVE_BUTTON).click();
         driver.findElement(CLOSE_BUTTON).click();

@@ -13,7 +13,7 @@ public class DropDown {
     protected String label;
     WebDriverWait wait;
 
-    //public String dropDownLocator = "//span[text() = '%s']/ancestor::tr[@class]//input";
+    public String dropDownInputLocator = "//span[text() = '%s']/ancestor::tr[@class]//input";
     public String dropDownLocator = "//span[text() = '%s']/ancestor::tr[@class]//div[@class = 'load-button tutorial-selector-image']";
     public String optionLocator = "//div[text() = '%s']";
 
@@ -23,10 +23,10 @@ public class DropDown {
         wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
-    /*public void selectOption(String option) {
+    public void selectOption_(String option) {
         driver.findElement(By.xpath(String.format(dropDownLocator, label))).click();
         driver.findElement(By.xpath(String.format(optionLocator, option))).click();
-    }*/
+    }
 
     public void selectOption(String option) {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(String.format(dropDownLocator, label)))).click();
