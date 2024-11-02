@@ -54,6 +54,7 @@ com/out/
 com/.idea/
 com/*.iml
 *.iml
+*.txt
 
 target/
 Moysklad/target/
@@ -62,7 +63,7 @@ Moysklad/.idea/
 Moysklad/.allure/
 *.iml
 Moysklad/*.iml
-
+Moysklad/*.txt
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/

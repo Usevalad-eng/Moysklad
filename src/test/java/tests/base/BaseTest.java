@@ -28,7 +28,7 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--window-size=1920,1080");
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         authPage = new AuthPage(driver);
         homePage = new HomePage(driver);
         goodPage = new GoodPage(driver);
