@@ -1,9 +1,12 @@
 package pages;
 
+import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+@Log4j2
 public class GoodPage extends BasePage{
 
     public static final By GOODS_LABEL = By.xpath("//td/div[text() = 'Товары и услуги']");
@@ -18,16 +21,22 @@ public class GoodPage extends BasePage{
     }
 
     @Override
+    @Step("open good page")
     public void open() {
         driver.get(URL + "/app/#good");
+        log.info("--open good page");
     }
 
     @Override
+    @Step("check if page opened")
     public boolean isPageOpened() {
+        log.info("--check if page opened");
         return isPageExist(GOODS_LABEL);
     }
 
+    @Step("check if page saved")
     public boolean isGoodPageSaved(){
+        log.info("--check if page saved");
         return driver.findElement(GOOD_CREATED).isDisplayed();
     }
 
@@ -38,12 +47,16 @@ public class GoodPage extends BasePage{
         driver.findElement(CLOSE_BUTTON).click();
     }
 
+    @Step("create good item")
     public void testGoodStepOne() {
         driver.findElement(GOOD_BUTTON).click();
         driver.findElements(GOOD_FIELD).get(0).sendKeys("Good test");
+        log.info("--create good item");
     }
 
+    @Step("saving")
     public void testGoodStepTwo() {
         driver.findElement(SAVE_BUTTON).click();
+        log.info("--saving");
     }
 }

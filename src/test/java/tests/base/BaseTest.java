@@ -21,14 +21,14 @@ public class BaseTest {
     protected TopMenuPage topMenuPage;
     protected UserSettingsPage userSettingsPage;
 
-    @BeforeMethod
+    @BeforeMethod(description = "settings")
     public void setUp() {
         /*driver = new ChromeDriver();
         driver.manage().window().maximize();*/
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--window-size=1920,1080");
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         authPage = new AuthPage(driver);
         homePage = new HomePage(driver);
         goodPage = new GoodPage(driver);
@@ -37,7 +37,7 @@ public class BaseTest {
         userSettingsPage = new UserSettingsPage(driver);
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true, description = "quit")
     public void tearDown() {
         driver.quit();
     }
