@@ -4,6 +4,12 @@
     <test name="test one -  Auth tests">
         <parameter name="browser" value="chrome"></parameter>
         <parameter name="name" value="admin@oycahox"></parameter>
+        <groups>
+            <run>
+                <!--<include name="fast" />-->
+                <exclude name="slow" />
+            </run>
+        </groups>
         <classes>
             <class name="tests.AuthTest" />
         </classes>
