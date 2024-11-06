@@ -16,7 +16,7 @@ public class AuthPage extends BasePage {
         super(driver);
     }
 
-    @Step("input login and password")
+    @Step("enter login '{name}' and password '{password}'")
     public void inputLoginAndPassword(String name, String password) {
         driver.findElement(USERNAME).sendKeys(name);
         driver.findElement(PASSWORD).sendKeys(password);
@@ -38,7 +38,7 @@ public class AuthPage extends BasePage {
     @Step("open the app page")
     public void open() {
         driver.get(URL);
-        log.info("--opening the app page");
+        log.info("--opening the app page: " + URL);
     }
 
     @Override
