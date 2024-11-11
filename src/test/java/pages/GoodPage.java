@@ -42,7 +42,9 @@ public class GoodPage extends BasePage{
 
     public void testGood() {
         driver.findElement(GOOD_BUTTON).click();
-        driver.findElements(GOOD_FIELD).get(0).sendKeys("Good test");
+        driver.findElements(GOOD_FIELD).get(0).sendKeys("Good item test");
+        driver.findElements(GOOD_FIELD).get(1).sendKeys("Good item test");
+        driver.findElements(GOOD_FIELD).get(3).sendKeys("Good item test");
         driver.findElement(SAVE_BUTTON).click();
         driver.findElement(CLOSE_BUTTON).click();
     }

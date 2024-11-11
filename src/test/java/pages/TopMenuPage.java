@@ -10,6 +10,8 @@ public class TopMenuPage extends BasePage{
 
     protected static final By MENU_USERNAME = By.xpath("//div[@class = 'menu-username-new']");
     protected String menuBarOption = "//td[@class = 'gwt-MenuItem' and text() = '%s']";
+    protected String topMenuOption = "//span[text() = '%s']/ancestor::td[@class = 'topMenuItem-new']//span[text() = '%s']";
+    protected String menuOption = "//span[text() = '%s']/ancestor::div[@class = 'subMenuContainer-new']//span[text() = '%s']";
 
     public TopMenuPage(WebDriver driver) {
         super(driver);
@@ -21,6 +23,15 @@ public class TopMenuPage extends BasePage{
         driver.findElement(By.xpath(String.format(menuBarOption, option))).click();
         log.info("--select menu bar option");
     }
+
+    public void selectTopMenuOption(String option1, String option2){
+        driver.findElement(By.xpath(String.format(topMenuOption, option1, option2))).click();
+    }
+
+    public void selectMenuOption(String option1, String option2){
+        driver.findElement(By.xpath(String.format(menuOption, option1, option2))).click();
+    }
+
     @Override
     @Step("open page")
     public void open() {

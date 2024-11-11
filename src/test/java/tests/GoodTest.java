@@ -20,6 +20,21 @@ public class GoodTest extends BaseTest {
         Assert.assertTrue(goodPage.isGoodPageSaved(), "Error, good item not saved!");
     }
 
+    @Test(description = "User can create  good item and click 'Close' button")
+    public void testGoodAndClose() {
+        authPage.open();
+        authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
+        authPage.clickLoginButton();
+        //goodPage.open();
+        topMenuPage.selectTopMenuOption("Товары", "Товары");
+        topMenuPage.selectMenuOption("Товары и услуги", "Товары и услуги");
+        goodPage.isPageOpened();
+        /*goodPage.testGoodStepOne();
+        goodPage.testGoodStepTwo();*/
+        goodPage.testGood();
+        Assert.assertTrue(goodPage.isGoodPageSaved(), "Error, good item not saved!");
+    }
+
     @Test(description = "User can create  good item and some not empty fields within it")
     public void testGoods() {
         authPage.open();

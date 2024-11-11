@@ -19,8 +19,9 @@ public class AuthPage extends BasePage {
     @Step("enter login '{name}' and password '{password}'")
     public void inputLoginAndPassword(String name, String password) {
         driver.findElement(USERNAME).sendKeys(name);
+        log.info("--input login: " + name);
         driver.findElement(PASSWORD).sendKeys(password);
-        log.info("--input login and password");
+        log.info("--input password: " + password);
     }
 
     @Step("click submit button")

@@ -1,5 +1,6 @@
 package tests.base;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,6 +11,7 @@ import pages.*;
 
 import java.time.Duration;
 
+@Log4j2
 @Listeners(TestListener.class)
 public class BaseTest {
 
@@ -27,6 +29,7 @@ public class BaseTest {
         driver.manage().window().maximize();*/
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--window-size=1920,1080");
+        //options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         authPage = new AuthPage(driver);
@@ -40,6 +43,7 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true, description = "quit")
     public void tearDown() {
         driver.quit();
+        log.info("--quit from browser");
     }
 }
 
