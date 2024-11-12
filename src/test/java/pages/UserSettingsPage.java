@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import model.UserSettings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 @Log4j2
 public class UserSettingsPage extends BasePage{
@@ -16,6 +17,9 @@ public class UserSettingsPage extends BasePage{
     public static final By SAVE_BUTTON = By.xpath("//span[text() = 'Сохранить']");
     public static final By CLOSE_BUTTON = By.xpath("//span[text() = 'Закрыть']");
     public static final By SUCCESS_NOTIFICATION = By.xpath("//tr[@class = 'dialogMiddle']//div[text() = 'Сотрудник сохранен']");
+    public static final By CHECKBOX_1 = By.id("gwt-uid-122");
+    public static final By CHECKBOX_2 = By.id("gwt-uid-125");
+    public static final By CHECKBOX_3 = By.id("gwt-uid-126");
 
     public UserSettingsPage(WebDriver driver) {
         super(driver);
@@ -32,6 +36,12 @@ public class UserSettingsPage extends BasePage{
         log.info("--input user info");
     }
 
+    public void inputUserCheckboxes(){
+        driver.findElement(CHECKBOX_1).click();
+        driver.findElement(CHECKBOX_2).click();
+        driver.findElement(CHECKBOX_3).click();
+    }
+
     @Step("saving")
     public void clickSaveButton(){
         driver.findElement(SAVE_BUTTON).click();
@@ -43,9 +53,21 @@ public class UserSettingsPage extends BasePage{
     }
 
     @Step("get success notification")
-    public boolean successNotificationIsVisible(){
+    public boolean successNotificationIsVisible() {
         log.info("--get success notification");
         return driver.findElement(SUCCESS_NOTIFICATION).isDisplayed();
+    }
+
+    public boolean successNotificationIsVisibleCheckboxes() {
+        log.info("--get success notification");
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(SUCCESS_NOTIFICATION)).isDisplayed();
+    }
+    public boolean isCheckboxSelected(){
+        if (driver.findElement(CHECKBOX_1).isSelected() || driver.findElement(CHECKBOX_2).isSelected() || driver.findElement(CHECKBOX_3).isSelected()){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     public void clickCloseButton(){

@@ -25,7 +25,7 @@ public class TestListener implements ITestListener {
         log.info("Test  " + result.getName() + " failed");
     }
 
-    /*@Override
+    @Override
     public void onStart(ITestContext context) {
         log.info("Test  " + context.getName() + " started");
     }
@@ -33,5 +33,5 @@ public class TestListener implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         log.info("Test  " + context.getName() + " finished");
-    }*/
+    }
 }

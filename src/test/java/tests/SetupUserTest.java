@@ -19,4 +19,15 @@ public class SetupUserTest extends BaseTest {
         userSettingsPage.clickSaveButton();
         Assert.assertTrue(userSettingsPage.successNotificationIsVisible(), "User not saved!");
     }
+
+    @Test(description = "Testing of filling user setup settings - checkboxes (checkboxes must be unchecked before test)")
+    public void successNotificationIsVisibleAfterSavingUserSetupMenuCheckboxes() {
+        authPage.open();
+        authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
+        authPage.clickLoginButton();
+        topMenuPage.selectMenuBarOption("Настройки пользователя");
+        userSettingsPage.inputUserCheckboxes();
+        userSettingsPage.clickSaveButton();
+        Assert.assertTrue(userSettingsPage.isCheckboxSelected(), "Checkboxes are not selected!");
+    }
 }

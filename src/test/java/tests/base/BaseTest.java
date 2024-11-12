@@ -29,7 +29,6 @@ public class BaseTest {
         driver.manage().window().maximize();*/
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--window-size=1920,1080");
-        //options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         authPage = new AuthPage(driver);

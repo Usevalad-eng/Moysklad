@@ -14,7 +14,7 @@
         <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
         <aspectjweaver.version>1.9.22</aspectjweaver.version>
         <allure-maven.version>2.10.0</allure-maven.version>
-        <selenium-java.version>4.26.0</selenium-java.version><!--4.24.0-->
+        <selenium-java.version>4.26.0</selenium-java.version>
         <testng.version>7.7.1</testng.version>
         <lombok.version>1.18.34</lombok.version>
         <javafaker.version>1.0.2</javafaker.version>

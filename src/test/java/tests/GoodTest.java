@@ -25,12 +25,9 @@ public class GoodTest extends BaseTest {
         authPage.open();
         authPage.inputLoginAndPassword("admin@oycahox", "Q123456");
         authPage.clickLoginButton();
-        //goodPage.open();
         topMenuPage.selectTopMenuOption("Товары", "Товары");
         topMenuPage.selectMenuOption("Товары и услуги", "Товары и услуги");
         goodPage.isPageOpened();
-        /*goodPage.testGoodStepOne();
-        goodPage.testGoodStepTwo();*/
         goodPage.testGood();
         Assert.assertTrue(goodPage.isGoodPageSaved(), "Error, good item not saved!");
     }

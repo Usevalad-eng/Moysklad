@@ -6,7 +6,6 @@
         <parameter name="name" value="admin@oycahox"></parameter>
         <groups>
             <run>
-                <!--<include name="fast" />-->
                 <exclude name="slow" />
             </run>
         </groups>
