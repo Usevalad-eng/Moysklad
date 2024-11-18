@@ -20,22 +20,22 @@ public class GoodPage extends BasePage{
     }
 
     @Override
-    @Step("open good page")
+    @Step("Open good page.")
     public void open() {
         driver.get(URL + "/app/#good");
-        log.info("--open good page");
+        log.info("open good page");
     }
 
     @Override
-    @Step("check if page opened")
+    @Step("Check if page opened.")
     public boolean isPageOpened() {
-        log.info("--check if page opened");
+        log.info("check if page opened");
         return isPageExist(GOODS_LABEL);
     }
 
-    @Step("check if page saved")
+    @Step("Check if page saved.")
     public boolean isGoodPageSaved(){
-        log.info("--check if page saved");
+        log.info("check if page saved");
         return driver.findElement(GOOD_CREATED).isDisplayed();
     }
 
@@ -48,16 +48,16 @@ public class GoodPage extends BasePage{
         driver.findElement(CLOSE_BUTTON).click();
     }
 
-    @Step("create good item")
+    @Step("Create good item.")
     public void testGoodStepOne() {
         driver.findElement(GOOD_BUTTON).click();
         driver.findElements(GOOD_FIELD).get(0).sendKeys("Good test");
-        log.info("--create good item");
+        log.info("create good item");
     }
 
-    @Step("saving")
+    @Step("Saving.")
     public void testGoodStepTwo() {
         driver.findElement(SAVE_BUTTON).click();
-        log.info("--saving");
+        log.info("saving");
     }
 }

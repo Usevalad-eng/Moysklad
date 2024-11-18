@@ -9,19 +9,16 @@ import org.testng.ITestResult;
 public class TestListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.printf("Test  %S started %n", result.getName());
         log.info("Test " + result.getName() + " started");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.printf("Test  %S success %n", result.getName());
         log.info("Test " + result.getName() + " success");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.printf("Test  %S failed %n", result.getName());
         log.info("Test  " + result.getName() + " failed");
     }
 

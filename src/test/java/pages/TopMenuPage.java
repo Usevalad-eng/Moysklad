@@ -17,32 +17,36 @@ public class TopMenuPage extends BasePage{
         super(driver);
     }
 
-    @Step("select menu bar option")
+    @Step("Select menu bar option.")
     public void selectMenuBarOption(String option){
         driver.findElement(MENU_USERNAME).click();
         driver.findElement(By.xpath(String.format(menuBarOption, option))).click();
-        log.info("--select menu bar option");
+        log.info("select menu bar option");
     }
 
+    @Step("Select TopMenuOption.")
     public void selectTopMenuOption(String option1, String option2){
         driver.findElement(By.xpath(String.format(topMenuOption, option1, option2))).click();
+        log.info("select menu option");
     }
 
+    @Step("Select MenuOption.")
     public void selectMenuOption(String option1, String option2){
         driver.findElement(By.xpath(String.format(menuOption, option1, option2))).click();
+        log.info("select menu option");
     }
 
     @Override
-    @Step("open page")
+    @Step("Open page.")
     public void open() {
         driver.get(URL + "/app/#homepage");
-        log.info("--open page");
+        log.info("open page");
     }
 
     @Override
-    @Step("check if page opened")
+    @Step("Check if page opened.")
     protected boolean isPageOpened() {
-        log.info("--check if page opened");
+        log.info("check if page opened");
         return isPageExist(MENU_USERNAME);
     }
 }

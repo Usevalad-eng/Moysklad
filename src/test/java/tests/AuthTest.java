@@ -20,15 +20,6 @@ public class AuthTest extends BaseTest {
         };
     }
 
-    @Test(description = "Negative auth tests: user should not be authorised using invalid data", dataProvider = "negative tests", groups = "slow")
-    public void userShouldNotBeAuthorisedWhenInvalidData(String login, String password, String error) {
-        authPage.open();
-        authPage.inputLoginAndPassword(login, password);
-        authPage.clickLoginButton();
-        String errorMessage = authPage.getErrorMessage();
-        Assert.assertEquals(errorMessage, error, "Error, invalid login or password!");
-    }
-
     @Test(description = "User should be authorised using valid data")
     public void userShouldBeAuthorisedUsingValidData() {
         authPage.open();
@@ -37,6 +28,15 @@ public class AuthTest extends BaseTest {
         authPage.clickLoginButton();
         homePage.isPageOpened();
         Assert.assertTrue(homePage.isPageOpened(), "Error, you didn't enter the app!");
+    }
+
+    @Test(description = "Negative auth tests: user should not be authorised using invalid data", dataProvider = "negative tests", groups = "slow")
+    public void userShouldNotBeAuthorisedWhenInvalidData(String login, String password, String error) {
+        authPage.open();
+        authPage.inputLoginAndPassword(login, password);
+        authPage.clickLoginButton();
+        String errorMessage = authPage.getErrorMessage();
+        Assert.assertEquals(errorMessage, error, "Error, invalid login or password!");
     }
 
     @Test(description = "negative auth tests: user should not be authorised using invalid data", groups = "slow")

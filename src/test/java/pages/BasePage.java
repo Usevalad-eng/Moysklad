@@ -15,7 +15,7 @@ public abstract class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(8));
     }
 
     public abstract void open();
@@ -26,7 +26,7 @@ public abstract class BasePage {
         try {
             return driver.findElement(element).isDisplayed();
         } catch (NoSuchElementException exception) {
-            System.out.println("No such element");
+            System.out.println("No such element.");
             return false;
         }
     }

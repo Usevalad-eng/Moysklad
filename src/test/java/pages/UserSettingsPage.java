@@ -25,7 +25,7 @@ public class UserSettingsPage extends BasePage{
         super(driver);
     }
 
-    @Step("input user info")
+    @Step("Input user info")
     public void inputUserInfo(UserSettings userSettings){
         new Input(driver, "Имя").write(userSettings.getName());
         new Input(driver, "Отчество").write(userSettings.getPatronymic());
@@ -33,35 +33,38 @@ public class UserSettingsPage extends BasePage{
         new Input(driver, "Телефон").write(userSettings.getPhone());
         new Input(driver, "Должность").write(userSettings.getPosition());
         new DropDown(driver, "Покупатель").selectOption(userSettings.getCustomer());
-        log.info("--input user info");
+        log.info("input user info");
     }
 
+    @Step("Input user checkboxes.")
     public void inputUserCheckboxes(){
         driver.findElement(CHECKBOX_1).click();
         driver.findElement(CHECKBOX_2).click();
         driver.findElement(CHECKBOX_3).click();
     }
 
-    @Step("saving")
+    @Step("Saving.")
     public void clickSaveButton(){
         driver.findElement(SAVE_BUTTON).click();
-        log.info("--saving");
+        log.info("saving");
     }
 
     public void clickSaveButton_(){
         new Buttons(driver, "Сохранить").clickOn();
     }
 
-    @Step("get success notification")
+    @Step("Get success notification.")
     public boolean successNotificationIsVisible() {
-        log.info("--get success notification");
+        log.info("get success notification");
         return driver.findElement(SUCCESS_NOTIFICATION).isDisplayed();
     }
 
     public boolean successNotificationIsVisibleCheckboxes() {
-        log.info("--get success notification");
+        log.info("get success notification");
         return wait.until(ExpectedConditions.visibilityOfElementLocated(SUCCESS_NOTIFICATION)).isDisplayed();
     }
+
+    @Step("Check if checkbox selected.")
     public boolean isCheckboxSelected(){
         if (driver.findElement(CHECKBOX_1).isSelected() || driver.findElement(CHECKBOX_2).isSelected() || driver.findElement(CHECKBOX_3).isSelected()){
             return true;
@@ -75,16 +78,16 @@ public class UserSettingsPage extends BasePage{
     }
 
     @Override
-    @Step("open page")
+    @Step("Open page.")
     public void open() {
         driver.get(URL + "/app/#account");
-        log.info("--open page");
+        log.info("open page");
     }
 
     @Override
-    @Step("check if page opened")
+    @Step("Check if page opened.")
     protected boolean isPageOpened() {
-        log.info("--check if page opened");
+        log.info("check if page opened");
         return isPageExist(CHANGE_PASSWORD_BUTTON);
     }
 }

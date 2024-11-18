@@ -16,25 +16,25 @@ public class GoodEditPage extends BasePage{
 
     public static final By ITEM_NAME_INPUT = By.xpath("//div[text() = 'Наименование товара']");
 
-    @Step("write into input")
+    @Step("Write into input.")
     public void writeIntoInput(AddGood addGood){
         new Input(driver, "Артикул").write(addGood.getArticle());
         new Input(driver, "Код").write(addGood.getCode());
-        log.info("--write into input");
+        log.info("write into input");
     }
 
 
     @Override
-    @Step("open page")
+    @Step("Open page.")
     public void open() {
         driver.get(URL + "/app/#good/edit?new&type=Good");
-        log.info("--open page");
+        log.info("open page");
     }
 
     @Override
-    @Step("check if page opened")
+    @Step("Check if page opened.")
     protected boolean isPageOpened() {
-        log.info("--check if page opened");
+        log.info("check if page opened");
         return  isPageExist(ITEM_NAME_INPUT);
     }
 }

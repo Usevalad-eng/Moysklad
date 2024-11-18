@@ -16,36 +16,36 @@ public class AuthPage extends BasePage {
         super(driver);
     }
 
-    @Step("enter login '{name}' and password '{password}'")
+    @Step("Enter login '{name}' and password '{password}'.")
     public void inputLoginAndPassword(String name, String password) {
         driver.findElement(USERNAME).sendKeys(name);
-        log.info("--input login: " + name);
+        log.info("input login: " + name);
         driver.findElement(PASSWORD).sendKeys(password);
-        log.info("--input password: " + password);
+        log.info("input password: " + password);
     }
 
-    @Step("click submit button")
+    @Step("Click submit button.")
     public void clickLoginButton() {
         driver.findElement(SUBMIT_BUTTON).click();
-        log.info("--click submit button");
+        log.info("click submit button");
     }
 
-    @Step("get error message")
+    @Step("Get error message.")
     public String getErrorMessage() {
-        log.info("--get error message");
+        log.info("get error message");
         return driver.findElement(ERROR_MESSAGE).getText();
     }
     @Override
-    @Step("open the app page")
+    @Step("Open the app page.")
     public void open() {
         driver.get(URL);
-        log.info("--opening the app page: " + URL);
+        log.info("opening the app page: " + URL);
     }
 
     @Override
-    @Step("check if page opened")
+    @Step("Check if page opened.")
     public boolean isPageOpened() {
-        log.info("--check if page opened");
+        log.info("check if page opened");
         return isPageExist(SUBMIT_BUTTON);
     }
 }

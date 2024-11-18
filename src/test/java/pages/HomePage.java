@@ -23,60 +23,60 @@ public class HomePage extends BasePage {
     }
 
     @Override
-    @Step("check if page opened")
+    @Step("Check if page opened.")
     public boolean isPageOpened() {
-        log.info("--check if page opened");
+        log.info("check if page opened");
         return isPageExist(FIRST_STEPS_TEXT_LABEL);
     }
 
-    @Step("check if popup displayed")
+    @Step("Check if popup displayed.")
     public boolean isPopupDisplayed() {
         try {
             return driver.findElement(POPUP_PANEL).isDisplayed();
         } catch (NoSuchElementException e) {
-            System.out.println("No popup panel element found");
+            System.out.println("No popup panel element found.");
         }
-        log.info("--check if popup displayed");
+        log.info("check if popup displayed");
         return false;
     }
 
-    @Step("close popup")
+    @Step("Close popup.")
     public void closePopupPanel() {
         driver.findElement(POPUP_PANEL_CLOSE_BUTTON).click();
-        log.info("--close popup");
+        log.info("close popup");
     }
 
-    @Step("close popup")
+    @Step("Close popup.")
     public void closePopupIfItIsDisplayed() {
         if (isPopupDisplayed()) {
             closePopupPanel();
             waitUntilPopupPanelIsInvisible();
-            log.info("--close popup");
+            log.info("close popup");
         }
     }
 
-    @Step("exit")
+    @Step("Exit.")
     public void exit() {
         driver.findElement(ARROW_IMG).click();
         driver.findElement(EXIT_ITEM).click();
-        log.info("--exit");
+        log.info("exit");
     }
 
-    @Step("go to user setup")
+    @Step("Go to user setup.")
     public void userSetup() {
         driver.findElement(ARROW_IMG).click();
         driver.findElement(USER_SETUP_ITEM).click();
         driver.findElement(SAVE_BUTTON).click();
         driver.findElement(CLOSE_BUTTON).click();
-        log.info("--go to user setup");
+        log.info("go to user setup");
     }
 
-    @Step("go to user setup and close")
+    @Step("Go to user setup and close.")
     public void userSetupAndClose() {
         driver.findElement(ARROW_IMG).click();
         driver.findElement(USER_SETUP_ITEM).click();
         driver.findElement(CLOSE_BUTTON).click();
-        log.info("--go to user setup and close");
+        log.info("go to user setup and close");
     }
 
     public void userSetupSaveAndClose() {
@@ -84,16 +84,16 @@ public class HomePage extends BasePage {
         driver.findElement(CLOSE_BUTTON).click();
     }
 
-    @Step("wait until popup get invisible")
+    @Step("Wait until popup get invisible.")
     public boolean waitUntilPopupPanelIsInvisible() {
-        log.info("--wait until popup get invisible");
+        log.info("wait until popup get invisible");
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(POPUP_PANEL));
     }
 
     @Override
-    @Step("open page")
+    @Step("Open page.")
     public void open() {
         driver.get(URL + "/app/#homepage");
-        log.info("--open page");
+        log.info("open page");
     }
 }
