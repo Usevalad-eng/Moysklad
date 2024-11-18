@@ -11,6 +11,7 @@ public class AuthTest extends BaseTest {
     public String loginAndPassFieldsAreEmptyMessage = "Чтобы войти, укажите имя пользователя";
     public String loginAndPassFieldsAreNotInRightFormat = "Неверный формат имени пользователя. Укажите свою учетную запись, например admin@romashka.";
     public String loginAndPassFieldsAreNotMatch = "Неправильный пароль или имя пользователя. Посмотрите, что можно сделать.";
+
     @DataProvider(name = "negative tests")
     @Description("negative auth tests")
     public Object[][] inputForLogin() {

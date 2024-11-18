@@ -7,6 +7,7 @@ import org.testng.ITestResult;
 
 @Log4j2
 public class TestListener implements ITestListener {
+
     @Override
     public void onTestStart(ITestResult result) {
         log.info("Test " + result.getName() + " started");

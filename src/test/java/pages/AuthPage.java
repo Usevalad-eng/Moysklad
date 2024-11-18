@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 @Log4j2
 public class AuthPage extends BasePage {
+
     public static final By USERNAME = By.xpath("//input[@name = 'j_username']");
     public static final By PASSWORD = By.xpath("//input[@name = 'j_password']");
     public static final By SUBMIT_BUTTON = By.id("submitButton");

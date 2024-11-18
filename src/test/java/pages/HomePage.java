@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 @Log4j2
 public class HomePage extends BasePage {
+
     public static final By FIRST_STEPS_TEXT_LABEL = By.xpath("//h1[text()='Первые шаги в МоемСкладе']");
     public static final By POPUP_PANEL = By.xpath("//div[@class = 'lognex-popup-panel']");
     public static final By POPUP_PANEL_CLOSE_BUTTON = By.xpath("//div[@class = 'lognex-popup-panel']//button");
